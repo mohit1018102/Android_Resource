@@ -11,7 +11,7 @@ d.) wrap_content
 
 # Building Layout part 2:
 ### Learn about
-a.) ViewGroups : LinearLayout: orientation->(vertical/horizontal), layout_weight=1(to distributed equal width or height *set 0dp resp*)<br>
+a.) ViewGroups : LinearLayout: orientation->(vertical/horizontal), layout_weight=1(to distribute equal width or height *set 0dp resp*)<br>
 b.) xmlns: android --> signifies **android:** text is an android attributes<br>
 c.) RelativeLayout : child views attributes -> 
 <ol type='1'>
