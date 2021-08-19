@@ -48,15 +48,16 @@ c.) RelativeLayout : child views attributes -><br> **layout_xyz:** *used by rela
       * Position the Views *(ViewGroup is also a view)*
       * Style the views
  6. Save image inside res/drawable : for <code> android: src="@drawable/cake" </code>
- ## CODE : https://github.com/udacity/Happy-Birthday   
+ ## CODE : https://github.com/udacity/Happy-Birthday
+ 7. **Text formatting : textSize, textColor, gravity, fontFamily**   
  
- 7. If you’re curious about the road even farther ahead, these are the free courses that make up the Android Basics Nanodegree:
+ 8. If you’re curious about the road even farther ahead, these are the free courses that make up the Android Basics Nanodegree:
        * Android Basics: User Interface (this course) : 
        * Android Basics: User Input :
        * Android Basics: Multiple App Screens
        * Android Basics: Networking
        * Android Basics: Data Storage
- 8. Here are some of Kirill’s favorite Android resources:
+ 9. Here are some of Kirill’s favorite Android resources:
 
       * <a href="https://blog.stylingandroid.com/">Styling Android blog:</a> A blog that shows off various technical aspects of building design elements of Android apps.
       * <a href="https://chris.banes.dev/">Chris Banes' blog:</a> A blog that gives you a deeper look into Android support libraries.
