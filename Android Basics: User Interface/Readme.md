@@ -9,7 +9,7 @@ b.) sp(scale independent pixels): used with text <br>
 c.) views, ImageView : src, **scaleType->center,centerCrop** ,TextView   :(common layout_width, layout_height)<br>
 d.) wrap_content
 
-# Building Layout part 2:
+# Building Layout : part 2
 ### Learn about
 a.) ViewGroups : LinearLayout: orientation->(vertical/horizontal), layout_weight=1(to distribute equal width or height *set 0dp resp*)<br>
 b.) xmlns: android --> signifies **android:** text is an android attributes<br>
