@@ -1,6 +1,11 @@
 # Android_Resource
 includes resources related to android development
 
+# Common Resources
+1. vocabulary Glossary: https://developers.google.com/android/for-all/vocab-words/?utm_source=udacity&utm_medium=course&utm_campaign=android_basics
+2. color:https://material.io/design/color/the-color-system.html
+3. typography :https://material.io/design/typography/the-type-system.html
+
 # Course Details: Udacity
 1. Android Basics: User Interface: https://www.udacity.com/course/android-basics-user-interface--ud834
 2. Android Basics:User Input : https://www.udacity.com/course/android-basics-user-input--ud836
