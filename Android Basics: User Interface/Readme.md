@@ -32,5 +32,30 @@ c.) RelativeLayout : child views attributes -><br> **layout_xyz:** *used by rela
   <li> Padding : manage spacing inside view  <b>android:padding =</b> </li>
   <li> Margin : manage  spacing outside view <b>android:layout_margin=</b> </li>
  </ol>
+ 
+ # Practice Set : Building Layouts
+
+1. Troubleshooting Document: https://docs.google.com/document/d/1w1Xn_hnSAODAAtdRDp7haYPBtEwX_l7Htpf8Wpgbu6w/pub?embedded=true is a growing document that lists solutions to common problems that students run in to.
+2. setup JDK + Android studio. 
+3. select unique package name com.package.xyz.app .
+4. Select minimum SDK : **why not to choose Android 1.0 to support all the versions ?**
+      * *because features like NFC ( required hardware) which was not supported by earlier versions.* 
+5. Step for creating single screen activity : layout part
+      * Select the views<br>
+            a. ViewGroup : Relative Layout<br>
+            b. TextView : for text<br>
+            c. ImageView: for image<br>
+      * Position the Views *(ViewGroup is also a view)*
+      * Style the views
+ 6. Save image inside res/drawable : for <code> android: src="@drawable/cake" </code>
+ ## CODE : https://github.com/udacity/Happy-Birthday   
+ 
+ 7. If you’re curious about the road even farther ahead, these are the free courses that make up the Android Basics Nanodegree:
+       * Android Basics: User Interface (this course) : 
+       * Android Basics: User Input :
+       * Android Basics: Multiple App Screens
+       * Android Basics: Networking
+       * Android Basics: Data Storage
+
 
 
