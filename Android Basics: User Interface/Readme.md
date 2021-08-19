@@ -56,6 +56,11 @@ c.) RelativeLayout : child views attributes -><br> **layout_xyz:** *used by rela
        * Android Basics: Multiple App Screens
        * Android Basics: Networking
        * Android Basics: Data Storage
+ 8. Here are some of Kirill’s favorite Android resources:
+
+      * <a href="https://blog.stylingandroid.com/">Styling Android blog:</a> A blog that shows off various technical aspects of building design elements of Android apps.
+      * <a href="https://chris.banes.dev/">Chris Banes' blog:</a> A blog that gives you a deeper look into Android support libraries.
+      * <a href="https://fragmentedpodcast.com/">Fragmented Podcast:</a> A weekly podcast filled with Android development discussion.
 
 
 
