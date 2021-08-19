@@ -13,7 +13,7 @@ d.) wrap_content
 ### Learn about
 a.) ViewGroups : LinearLayout: orientation->(vertical/horizontal), layout_weight=1(to distribute equal width or height *set 0dp resp*)<br>
 b.) xmlns: android --> signifies **android:** text is an android attributes<br>
-c.) RelativeLayout : child views attributes -> 
+c.) RelativeLayout : child views attributes -><br> **layout_xyz:** *used by relative layout to position child views*
 <ol type='1'>
       <li> layout_alignParentTop,</li>
       <li> layout_alignParentBottom,</li>
@@ -29,9 +29,8 @@ c.) RelativeLayout : child views attributes ->
     <li>layout_above= @id/ view_id</li>
     <li>layout_below= @id/ view_id</li>
     </ul>
-  
   <li> Padding : manage spacing inside view  <b>android:padding =</b> </li>
   <li> Margin : manage  spacing outside view <b>android:layout_margin=</b> </li>
  </ol>
-*used by relativelayout to position child views*<br>
+
 
