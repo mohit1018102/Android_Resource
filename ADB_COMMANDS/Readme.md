@@ -7,4 +7,5 @@
 6. <code>>>$ su</code>  *to enable super user mode (only for rooted devices)*, **#->super user.**
 7.  <code># cat /proc/<pid_of_process>/maps |  grep "libnative-lib.so"</code> **check mapping of file into memory**, *grep->global regular expression*
 8. <code>adb shell pm list packages</code> **display packages list.**
-9. <code>adb shell cmd package list libraries</code>
+9. <code>adb connect <ip_address/> </code> **to connect to remote device.**
+  10. <code>adb install -f -r -d -t <apk_file_name> </code> **to install apk.**
