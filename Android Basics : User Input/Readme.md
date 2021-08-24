@@ -7,3 +7,13 @@
 5. **For Windows, go to File > Settings > Editor > General > Auto Import** : To enable auto complete.
 6. DDMS stands for Dalvik Debug Monitor Server, and is a tool in Android to help you debug your app.**(eclipse MAT support DDMS)(deprecated for  android studio)(used to find Memory Leaks, crashes etc).**
 7. <a href="https://developer.android.com/studio/debug?utm_source=udacity&utm_medium=course&utm_campaign=android_basics">Debugging your code in Android Studio :</a> **add breakpoint to debug app.** *(just like dry run)*
+8. **Project : just java, Screenshot of desired layout.**
+    * **ViewGroup: LinearLayout -> orientation: vertical**    
+      * TextView
+      * **LinearLayout -> orientation: horizontal**
+        * Button: onClick, TextView, Button: onClick
+      * TextView
+      * TextView
+      * Button :onClick
+
+<img src="justjava.png" width="500dp" height="1000dp"/>
