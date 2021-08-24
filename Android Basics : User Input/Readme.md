@@ -16,4 +16,4 @@
       * TextView
       * Button :onClick
 
-<img src="justjava.png" width="500dp" height="1000dp"/>
+<img src="justjava.png" width="500dp" height="900dp"/>
