@@ -13,7 +13,7 @@
       * **LinearLayout -> orientation: horizontal**
         * Button: onClick, TextView, Button: onClick
       * TextView
-      * TextView
+      * TextView : multi line message can be printed using escape character *\n*
       * Button :onClick
 
 <img src="justjava.png" width="500dp" height="900dp"/>
