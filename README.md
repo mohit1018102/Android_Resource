@@ -7,6 +7,8 @@ includes resources related to android development
 3. typography :https://material.io/design/typography/the-type-system.html
 4. <a href="https://androidweekly.net/">Android Weekly</a> Android Weekly is a weekly newsletter about the latest news in Android development.
 5. <a href="https://www.uplabs.com/templates/android"> MaterialUp</a> curates the best of Material design inspiration and tools.
+6. https://material.io/design for material design.
+7. git : http://git.github.io/git-reference/
 
 # Course Details: Udacity
 1. Android Basics: User Interface: https://www.udacity.com/course/android-basics-user-interface--ud834
