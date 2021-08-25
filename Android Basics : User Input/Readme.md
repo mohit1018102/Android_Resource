@@ -36,7 +36,7 @@
 ```
   
 4. `getSupportActionBar().setTitle(Html.fromHtml("<fontcolor=\"black\">"+ getString(R.string.app_name)+"</font>"));`  used to change title bar text color.
-5. **Project : just java, Screenshot of desired layout.**
+5. **Project : Court Counter, Screenshot of desired layout.**
     * **ViewGroup: RelativeLayout**    
       * **LinearLayout -> orientation: horizontal**
         * **LinearLayout -> orientation: vertical**
