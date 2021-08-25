@@ -25,7 +25,7 @@
 ## Project code : https://github.com/udacity/Just-Java
 
 # Practice set 2 : Court Counter app 
-1. `android: gravity=</code>` **align view inside view's boundary like center horizonal, vertical horizonal, center etc.**
+1. `android: gravity=` **align view inside view's boundary like center horizonal, vertical horizonal, center etc.**
 2. <code>android: layout_gravity=</code> **align view inside layout's boundary like center horizonal, vertical horizonal, center etc**
 3. style.xml or theme res<br>
    
