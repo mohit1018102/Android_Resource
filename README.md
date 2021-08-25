@@ -5,7 +5,7 @@ includes resources related to android development
 1. vocabulary Glossary: https://developers.google.com/android/for-all/vocab-words/?utm_source=udacity&utm_medium=course&utm_campaign=android_basics
 2. color:https://material.io/design/color/the-color-system.html
 3. typography :https://material.io/design/typography/the-type-system.html
-4. <a href="https://androidweekly.net/">Android Weekly</a> is a weekly newsletter about the latest news in Android development.">Android Weekly is a weekly newsletter about the latest news in Android development.
+4. <a href="https://androidweekly.net/">Android Weekly</a> Android Weekly is a weekly newsletter about the latest news in Android development.
 5. <a href="https://www.uplabs.com/templates/android"> MaterialUp</a> curates the best of Material design inspiration and tools.
 
 # Course Details: Udacity
