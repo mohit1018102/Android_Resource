@@ -9,13 +9,41 @@
 7. <a href="https://developer.android.com/studio/debug?utm_source=udacity&utm_medium=course&utm_campaign=android_basics">Debugging your code in Android Studio :</a> **add breakpoint to debug app.** *(just like dry run)*
 8. **Project : just java, Screenshot of desired layout.**
     * **ViewGroup: LinearLayout -> orientation: vertical**    
-      * TextView
-      * **LinearLayout -> orientation: horizontal**
-        * Button: onClick, TextView, Button: onClick
-      * TextView
-      * TextView : multi line message can be printed using escape character *\n*
-      * Button :onClick
+      * **RelativeLayout **
+        * **LinearLayout -> orientation: vertical**
+         *TextView, TextView, Button, Button, Button.
+        * **LinearLayout -> orientation: vertical**
+         *TextView, TextView, Button, Button, Button.
+      * Button
+      
 
 <img src="justjava.png" width="500dp" height="900dp"/>
 
-# Project code : https://github.com/udacity/Just-Java
+## Project code : https://github.com/udacity/Just-Java
+
+# Practice set 2 : Court Counter app 
+1. `android: gravity=</code>` **align view inside view's boundary like center horizonal, vertical horizonal, center etc.**
+2. <code>android: layout_gravity=</code> **align view inside layout's boundary like center horizonal, vertical horizonal, center etc**
+3. style.xml or theme res<br>
+   
+```xml
+
+   <item name="colorPrimary">@color/orange</item>                    // used to set title bar background color.
+   <item name="colorPrimaryDark">@color/orange</item>"</code>        //used to set top bar background color.
+```
+  
+4. `getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">"+ getString(R.string.app_name)+"</font>"));`  used to change title bar text color.
+5. **Project : just java, Screenshot of desired layout.**
+    * **ViewGroup: RelativeLayout**    
+      * **LinearLayout -> orientation: horizontal**
+        * **LinearLayout -> orientation: vertical**
+            * TextView,TextView, Button :onClick, Button :onClick, Button :onClick.
+        * <View layout_width="1dp" layout_height="match_parent"/>
+        * **LinearLayout -> orientation: vertical**
+            * TextView,TextView, Button :onClick, Button :onClick, Button :onClick.
+      *  Button :onClick
+
+ ### Screenshots of app
+ 
+<img src="coutcounter.png" width="300dp" height="600dp"/>  <img src="courtcounter2.png" width="300dp" height="600dp"/>
+## Project Code: https://github.com/udacity/Court-Counter
