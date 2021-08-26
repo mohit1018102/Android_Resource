@@ -100,4 +100,43 @@
             </HorizontalScrollView> 
             
      ```
+  4. ```xml
+      <EditText
+         android:id="@+id/album_description_view"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="Name"                              // set hint for user 
+         android:inputType="text" />                     // allows only Characters
+      ```
+   5. `public Editable getText ()` 
+   6. How to set emoji by unicode in a textview?
+      ```java
+             // replaced 'U+' by '0x'
+             // Example: replace 'U+1F60A' by '0x1F60A'
+             int unicode = 0x1F60A;
+             String emoji = getEmojiByUnicode(unicode)
+             String text = "So happy "
+             textview.setText(text + emoji);
+            ...
+            public String getEmojiByUnicode(int unicode){
+                 return new String(Character.toChars(unicode));
+             }
          
+             ...
+            output: So happy 😊
+      ```
+   7. Intent : Intent as a message specifying some operation to be performed
+         * Action, Data, Category, Component, Extras.
+   
+  8. <a href="https://developer.android.com/guide/components/intents-common.html?utm_source=udacity&utm_medium=course&utm_campaign=android_basics">Common Intents Guide</a>
+  9. Compose mail
+  ```java
+      Intent intent = new Intent(Intent.ACTION_SEND);
+      intent.setType("*/*");
+      intent.putExtra(Intent.EXTRA_SUBJECT, "just java order for "+ name);
+      intent.putExtra(Intent.EXTRA_TEXT, orderSummary);
+      if (intent.resolveActivity(getPackageManager()) != null) { // check for apps that support ACTION_SEND intent
+           startActivity(intent);
+      }
+  ```
+  
