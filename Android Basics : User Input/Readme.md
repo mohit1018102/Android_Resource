@@ -27,7 +27,7 @@
 # Practice set 2 : Court Counter app 
 1. `android: gravity=` **align view inside view's boundary like center horizonal, vertical horizonal, center etc.**
 2. <code>android: layout_gravity=</code> **align view inside layout's boundary like center horizonal, vertical horizonal, center etc**
-3. style.xml or theme res<br>
+3. res>values>style.xml or theme res<br>
    
 ```xml
 
@@ -50,3 +50,18 @@
  
 <img src="coutcounter.png" width="300dp" height="600dp"/>  <img src="courtcounter2.png" width="300dp" height="600dp"/>
 ## Project Code: https://github.com/udacity/Court-Counter
+
+# OOPS PART 1
+1.Here are some helpful links:
+   * <a href="https://developer.android.com/guide/topics/resources/providing-resources?utm_source=udacity&utm_medium=course&utm_campaign=android_basics">Resources Overview</a>
+   * <a href="https://developer.android.com/guide/topics/resources/providing-resources?utm_source=udacity&utm_medium=course&utm_campaign=android_basics#Accessing">Accessing Resources</a>
+   * <a href="https://developer.android.com/guide/practices/screens_support.html?utm_source=udacity&utm_medium=course&utm_campaign=android_basics">How to Support Multiple Screens</a>
+   * <a href="https://developer.android.com/guide/topics/resources/providing-resources.html?utm_source=udacity&utm_medium=course&utm_campaign=android_basics">Providing Resources</a>
+2. Access Resources
+   * In java, : `R.<resource_type>.<resource_name>`
+   * In xml, : `@<resource_type>/<resource_name>`
+3. Parsing layout.xml file
+   * Creates a Hierarchy of java objects
+   * Inflates the objects like LinearLayout, TextView etc to form a view hierarchy.
+   * Objects have various method to interact with these objects.
+<img src="view.png">
