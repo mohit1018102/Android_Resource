@@ -70,3 +70,34 @@
 5. ```java 
    public T findViewById (int id)  //returns view object
    ```
+6. Red Lines are detailed specification of a design like spacing, padding etc.
+
+
+# OOPS PART 2
+1. ```xml
+    //use Checkbox.isChecked() to know the state of the checkbox.
+     <CheckBox
+         android:id="@+id/notify_me_checkbox"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/notify_me"
+         android:textAppearance="?android:textAppearanceMedium" />
+    ```
+ 2. **EDIT >> Indent Selection** :~ to indent selected text.
+ 3. ```xml
+          <ScrollView   
+               android:layout_width="match_parent"  
+               android:layout_height="wrap_content"  
+               android:id="@+id/scrollView">
+               // Layout and views........
+          </ScrollView>
+          
+           <HorizontalScrollView  
+            android:layout_width="match_parent"  
+            android:layout_height="60dp"  
+            android:id="@+id/horizontalScrollView"> 
+                // Layout and views........
+            </HorizontalScrollView> 
+            
+     ```
+         
