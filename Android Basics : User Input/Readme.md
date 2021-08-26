@@ -67,3 +67,6 @@
 <img src="view.png">
 
 4. To see Classes code enable extension : **Chrome web store >> search >> Android SDK Search** : https://chrome.google.com/webstore/detail/android-sdk-search/elihjfnjglabmkeonphlglkpjppchoco?hl=en-US
+5. ```java 
+   public T findViewById (int id)  //returns view object
+   ```
