@@ -1,6 +1,9 @@
 # Android_Resource
 includes resources related to android development
 
+### [IMP] MindOrks by Amit Shekkar: https://blog.mindorks.com/mvvm-architecture-android-tutorial-for-beginners-step-by-step-guide
+### [IMP] git repo: MindOrks by Amit Shekkar: https://github.com/MindorksOpenSource/android-interview-questions
+
 # Common Resources
 1. vocabulary Glossary: https://developers.google.com/android/for-all/vocab-words/?utm_source=udacity&utm_medium=course&utm_campaign=android_basics
 2. color:https://material.io/design/color/the-color-system.html
