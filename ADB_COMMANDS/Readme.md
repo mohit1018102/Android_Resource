@@ -9,3 +9,7 @@
 8. <code>adb shell pm list packages</code> **display packages list.**
 9. <code>adb connect <ip_address/> </code> **to connect to remote device.**
   10. <code>adb install -f -r -d -t <apk_file_name> </code> **to install apk.**
+11. `adb shell dumpsys package <package-name> | grep "uid"` **return userid of package.**
+12. `grep libxyz.so /proc/*/maps  : **lists all the proc mapping .so file.**
+13. `adb pull /data/system/packages.xml` **pull packages.xml from connected  device.**
+14. `adb push packages.xml /data/system` **push packages.xml from local machine to connected device.**
