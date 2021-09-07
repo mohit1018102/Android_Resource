@@ -13,3 +13,7 @@
 12. `grep libxyz.so /proc/*/maps  : **lists all the proc mapping .so file.**
 13. `adb pull /data/system/packages.xml` **pull packages.xml from connected  device.**
 14. `adb push packages.xml /data/system` **push packages.xml from local machine to connected device.**
+15. `adb shell rm /data/dalvik-cache/* ` **clear cache.**
+16. `adb reboot` **reboot connected device**
+17. `# cd /data/app` -> `find . -name libnativelib.so` **find native lib library.**
+
