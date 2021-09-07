@@ -10,10 +10,11 @@
 9. <code>adb connect <ip_address/> </code> **to connect to remote device.**
   10. <code>adb install -f -r -d -t <apk_file_name> </code> **to install apk.**
 11. `adb shell dumpsys package <package-name> | grep "uid"` **return userid of package.**
-12. `grep libxyz.so /proc/*/maps  : **lists all the proc mapping .so file.**
+12. `grep libxyz.so /proc/*/maps`  : **lists all the proc mapping .so file.**
 13. `adb pull /data/system/packages.xml` **pull packages.xml from connected  device.**
 14. `adb push packages.xml /data/system` **push packages.xml from local machine to connected device.**
 15. `adb shell rm /data/dalvik-cache/* ` **clear cache.**
 16. `adb reboot` **reboot connected device**
 17. `# cd /data/app` -> `find . -name libnativelib.so` **find native lib library.**
 
+ 
