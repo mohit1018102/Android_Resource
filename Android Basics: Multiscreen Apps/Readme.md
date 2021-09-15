@@ -128,6 +128,56 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+### or, short way to write above code 
+
+```java
+ protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        TextView numbers=findViewById(R.id.numbers);
+        TextView colors=findViewById(R.id.colors);
+        TextView familyMember=findViewById(R.id.family_members);
+        TextView phrases=findViewById(R.id.phrases);
+        
+
+        numbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=NumbersActivity.makeNumbersActivityIntent(MainActivity.this);
+                startActivity(intent);
+            }
+        });
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=ColorsActivity.makeColorsActivityIntent(MainActivity.this);
+                startActivity(intent);
+
+            }
+        });
+        familyMember.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=FamilyMembersActivity.makeFamilyMembersActivityIntent(MainActivity.this);
+                startActivity(intent);
+
+            }
+        });
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=PhrasesActivity.makePhrasesActivityIntent(MainActivity.this);
+                startActivity(intent);
+
+            }
+        });
+    }
+  ```
+  
+  
+## OnClickListener vs onClick
+When you define a listener using the onClick attribute, the view looks for a method with that name only in its host activity. Programmatically setting an OnClickListener allows you to control a button's behavior from somewhere other than its host activity. This will become very relevant when we learn about Fragments, which are basically mini activities, allowing you to build reusable collections of views with their own lifecycle, which can then be assembled into activities. Fragments always need to use OnClickListeners to control their buttons, since they're not Activities, and won't be searched for listeners defined in onClick.
 
 ### creating Miwok application 
 <img src="miwoksc1.png" width=200 height=400/>
