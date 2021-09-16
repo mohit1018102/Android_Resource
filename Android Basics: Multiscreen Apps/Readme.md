@@ -1,4 +1,5 @@
 # Android Basics: Multiscreen Apps
+## Chapter 1
 1. **color: https://material.io/resources/color/#!/?view.left=0&view.right=0**
 2. When user tap on the app icon, android sends an intent to start your application, then that intent is handled by main activity and opens app's launcher screen.
 <img src="launchcycle.png" width=700 height=400/>
@@ -181,6 +182,76 @@ When you define a listener using the onClick attribute, the view looks for a met
 
 ### creating Miwok application 
 <img src="miwoksc1.png" width=200 height=400/>
+
+
+## Chapter 2:
+1. Adding TextView to LinearLayout dynamically.
+```java
+        ArrayList<String> words=new ArrayList<>();
+        words.add("One");
+        words.add("Two");
+        words.add("Three");
+        words.add("Four");
+        words.add("Five");
+        words.add("Six");
+        words.add("Seven");
+        words.add("Eight");
+        words.add("Nine");
+        words.add("Ten");
+
+
+        LinearLayout rootView=findViewById(R.id.root_view);
+        for(int i=0;i<10;i++) {
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(i));
+            rootView.addView(wordView);
+        }
+```
+
+### Memory is a limited resource
+1.  Memory is limited, if we are working with huge data, so creating views for enitre data at once cause Memory problem.
+2.  To Use the Memory efficiently, we use view recycling, in which app display certain part of data to the user and reuse the views when user scrolls up and down.
+<br>
+ <img src="recycleview.PNG"/> 
+ <img src="mem.PNG" width=600 height=400 />
+ 
+#### ListView+ArrayAdapter
+<img src="ArrayAdapt.PNG"/>
+<br>
+
+1. Android ListView is a view which contains the group of items and displays in a scrollable list. ListView is implemented by importing android.widget.ListView class.
+2. ListView uses Adapter classes which add the content from data source (such as string array, array, database etc) to ListView.
+```xml
+   <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_view"
+    android:orientation="vertical"
+    tools:context=".NumbersActivity">
+
+   </ListView>
+```
+```java
+        ArrayList<String> words=new ArrayList<>(); //data
+        words.add("One");
+        words.add("Two");
+        words.add("Three");
+        words.add("Four");
+        words.add("Five");
+        words.add("Six");
+        words.add("Seven");
+        words.add("Eight");
+        words.add("Nine");
+        words.add("Ten");
+        
+        ArrayAdapter<String> item=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, words); //Adapter
+        ListView listView=findViewById(R.id.root_view);
+        listView.setAdapter(item);
+```
+
+ 
 
 
 
