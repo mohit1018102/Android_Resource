@@ -255,12 +255,13 @@ When you define a listener using the onClick attribute, the view looks for a met
 ## DesignTime layout attribute
 **Android Studio supports a variety of XML attributes in the tools namespace that enable design-time features (such as which layout to show in a fragment) or compile-time behaviors (such as which shrinking mode to apply to your XML resources). When you build your app, the build tools remove these attributes so there is no effect on your APK size or runtime behavior.**
 
-```java
+```xml
+//custom layout R,layout.list_view
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/list_view"
     android:paddingTop="16dp"
     android:paddingLeft="16dp"
     android:orientation="vertical"
@@ -271,8 +272,82 @@ When you define a listener using the onClick attribute, the view looks for a met
         android:id="@+id/miwok_word"
         tools:text="Miwok"              //This text shown during design time, but won't display on runtime.
         />
+        
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/default_word"
+        tools:text="one"
+       />
  </LinearLayout>
  ```
+ 
+## Custom Adapter for ListView
+
+1. To create CustomAdapter, you have to override getView() method. 
+2. ListView calls getView() to get views.
+
+<img src="img/customAdapt.PNG" width=600 height=400/>
+
+```java
+//word class for data
+
+public class Word {
+
+    private String mDefaultTranslation;
+    private String mMiwokTranslation;
+
+    public Word(String defaultTranslation,String miwokTranslation)
+    {
+        mDefaultTranslation=defaultTranslation;
+        mMiwokTranslation=miwokTranslation;
+    }
+
+    public String getmDefaultTranslation()
+    {
+        return mDefaultTranslation;
+    }
+
+    public String getmMiwokTranslation() {
+        return mMiwokTranslation;
+    }
+}
+```
+
+```java
+// Adapter class to convert Words ArrayList to ArrayAdapter.
+
+public class WordAdapter extends ArrayAdapter<Word> {
+
+
+    public WordAdapter(Context context, ArrayList<Word> words)
+    {
+        super(context,0,words);
+
+    }
+
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {  // override getView method for custom Adapter
+        Word word=getItem(position);  // get Data At position.
+
+        // to reuse view
+        View listView=convertView;
+        //sometimes it is null, so we have to create new one
+        if(listView==null)
+        {
+            listView= LayoutInflater.from(getContext()).inflate(R.layout.list_view,parent,false); // create new View
+        }
+
+        TextView miwok=listView.findViewById(R.id.miwok_word); 
+        TextView deft=listView.findViewById(R.id.default_word);
+        miwok.setText(word.getmMiwokTranslation());
+        deft.setText(word.getmDefaultTranslation());
+        return listView;
+    }
+}
+
+```
 
  
 
