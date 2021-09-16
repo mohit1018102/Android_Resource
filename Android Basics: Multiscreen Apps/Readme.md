@@ -251,6 +251,29 @@ When you define a listener using the onClick attribute, the view looks for a met
         listView.setAdapter(item);
 ```
 
+
+## DesignTime layout attribute
+**Android Studio supports a variety of XML attributes in the tools namespace that enable design-time features (such as which layout to show in a fragment) or compile-time behaviors (such as which shrinking mode to apply to your XML resources). When you build your app, the build tools remove these attributes so there is no effect on your APK size or runtime behavior.**
+
+```java
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/list_view"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/miwok_word"
+        tools:text="Miwok"              //This text shown during design time, but won't display on runtime.
+        />
+ </LinearLayout>
+ ```
+
  
 
 
