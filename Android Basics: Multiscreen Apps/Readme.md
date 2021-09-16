@@ -349,6 +349,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
 ```
 
+```java
+//NumberActivity
+      ....
+        WordAdapter item=new WordAdapter(this, words);
+        ListView listView=findViewById(R.id.root_view);
+         listView.setAdapter(item);
+        ....
+```
+       
+
  
 
 
