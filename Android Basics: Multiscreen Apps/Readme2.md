@@ -17,5 +17,7 @@
 3. values/dimens.xml to set dimens just like colors, strings.
 
 
+# Activity LifeCycle and Audio playback
+<img src="img/mediaplayer.PNG"/>
 
 
