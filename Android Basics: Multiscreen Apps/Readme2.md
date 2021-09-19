@@ -11,8 +11,11 @@
     >
 ```
 2. View.setVisibility(View.VISIBLE | View.Invisible | View.GONE);
-      * View.VISIBLE :  view is visible to user.
-      * View.INVISIBLE: view is invisible to the user but using space of the view.
-      * View.GONE : view is completely gone, invisible + using no space.
+      * `View.VISIBLE` :  view is visible to user.
+      * `View.INVISIBLE`: view is invisible to the user but using space of the view.
+      * `View.GONE` : view is completely gone, invisible + using no space.
 3. values/dimens.xml to set dimens just like colors, strings.
+
+
+
 
