@@ -20,4 +20,41 @@
 # Activity LifeCycle and Audio playback
 <img src="img/mediaplayer.PNG"/>
 
+1. ListView provides a single ItemClickListener to process onClick action on views.
+    * One way to process onClick is by creating listener for each views (but, if there are ~1000000 rows then this is not an efficient solution). 
+
+```java
+
+listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                stop();
+
+                mMediaPlayer= MediaPlayer.create(FamilyMembersActivity.this,words.get(position).getmAudioMedia());
+                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        stop();
+                    }
+                });
+                mMediaPlayer.start();
+
+
+            }
+        });
+    ....
+    
+    public void stop() {
+        if (mMediaPlayer != null) {
+
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+        }
+    }
+}
+
+```
+
+
+
 
