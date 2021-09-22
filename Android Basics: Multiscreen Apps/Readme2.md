@@ -37,9 +37,7 @@ listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         stop();
                     }
                 });
-                mMediaPlayer.start();
-
-
+                mMediaPlayer.start(); //no need to call prepare(); create does that for you
             }
         });
     ....
