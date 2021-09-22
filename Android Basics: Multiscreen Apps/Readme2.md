@@ -95,7 +95,7 @@ Application not longer visible.
         if (mMediaPlayer != null) {
 
             mMediaPlayer.release(); // release the resource
-            mMediaPlayer = null;    // set it tu null to avoid memory leak
+            mMediaPlayer = null;    // set it to null to avoid memory leak
         }
     }
 ```
