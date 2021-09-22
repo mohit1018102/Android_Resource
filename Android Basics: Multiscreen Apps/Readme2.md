@@ -25,18 +25,27 @@
 
 ```java
 
-listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {       // Asynchronous callback
+
+
+            //AdapterView -> AdapterView where the click happens
+            // View--> The view within the AdapterView that was clicked
+            // position --> position of data within Adapterview data source
+            // id --> row id of item that was clicked. 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                stop();
+                stop(); // also call before creating new mediaplayer, sometimes user switches bw different
+                        // audios before their completion.
 
                 mMediaPlayer= MediaPlayer.create(FamilyMembersActivity.this,words.get(position).getmAudioMedia());
-                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                
+                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {      // Asynchronous callback
                     @Override
                     public void onCompletion(MediaPlayer mp) {
                         stop();
                     }
                 });
+                
                 mMediaPlayer.start(); //no need to call prepare(); create does that for you
             }
         });
@@ -45,13 +54,63 @@ listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     public void stop() {
         if (mMediaPlayer != null) {
 
-            mMediaPlayer.release();
-            mMediaPlayer = null;
+            mMediaPlayer.release(); // release the resource
+            mMediaPlayer = null;    // set it tu null to avoid memory leak
         }
     }
 }
 
 ```
+
+
+## Note: use a keyboard shortcut to automatically “Generate a method (Getters, Setters, Constructors, toString, etc..)”. On Windows, the keyboard shortcut is ALT + Insert.
+## Cntrl+ O to get all the override methods
+
+# Activity Lifecycle
+<p align="center">
+<img src="img/activity_lifecycle.png" >
+</p>
+
+## 1.onCreate()
+Application created and intialization stage.
+
+## 2.onStart()
+Application becoming Visible.
+
+## 3.onResume()
+Application ready for interaction.
+
+## 4.onPause()
+Application is visible but unfocused.
+
+## 5.onStop()
+Application not longer visible.
+```java
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stop();
+    }
+    
+    public void stop() {
+        if (mMediaPlayer != null) {
+
+            mMediaPlayer.release(); // release the resource
+            mMediaPlayer = null;    // set it tu null to avoid memory leak
+        }
+    }
+```
+
+## 6.onRestart()
+Application comes to foreground after being stopped.
+
+## 7.onDestory()
+Application destoryed and all allocated resources are freed.
+
+
+# Audio Focus
+
+
 
 
 
