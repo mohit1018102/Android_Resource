@@ -25,8 +25,7 @@
 
 ```java
 
-listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {       // Asynchronous callback
-
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {       // Asynchronous callback
 
             //AdapterView -> AdapterView where the click happens
             // View--> The view within the AdapterView that was clicked
@@ -34,19 +33,19 @@ listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {       //
             // id --> row id of item that was clicked. 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                stop(); // also call before creating new mediaplayer, sometimes user switches bw different
-                        // audios before their completion.
+                    stop(); // also call before creating new mediaplayer, sometimes user switches bw different
+                            // audios before their completion.
 
-                mMediaPlayer= MediaPlayer.create(FamilyMembersActivity.this,words.get(position).getmAudioMedia());
+                    mMediaPlayer= MediaPlayer.create(FamilyMembersActivity.this,words.get(position).getmAudioMedia());
                 
-                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {      // Asynchronous callback
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        stop();
-                    }
-                });
+                    mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {      // Asynchronous callback
+                                 @Override
+                                public void onCompletion(MediaPlayer mp) {
+                                             stop();
+                                }
+                    });
                 
-                mMediaPlayer.start(); //no need to call prepare(); create does that for you
+                    mMediaPlayer.start(); //no need to call prepare(); create does that for you
             }
         });
     ....
