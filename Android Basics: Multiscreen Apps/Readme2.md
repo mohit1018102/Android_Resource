@@ -208,6 +208,17 @@ listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                           
 ```
 
+# Touch Feedback
+1. Touch feedback provides the user with instantaneous visual confirmation at the point of contact where they interacted with the UI elements on the screen. It is vital that the apps you develop on Android have touch feedback. They can make your app appear fast and responsive, even if nothing else happens yet.
+2. Ever since Material Design was introduced in Lollipop, there is a circular ripple animation that happens when you interact with a UI elements.
+3. By setting a view to have a background of ?android:attr/selectableItemBackground, the View will have a transparent background by default. When you touch or press the view, it will show the pressed state (which is the circular ripple animation). This behavior is the default touch feedback behavior defined in the Android framework.
+
+
+```xml
+android:background="?android:attr/selectableItemBackground"
+```
+
+
 
 
 
