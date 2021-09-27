@@ -17,7 +17,7 @@ includes resources related to android development
 1. Android Basics: User Interface: https://www.udacity.com/course/android-basics-user-interface--ud834
 2. Android Basics:User Input : https://www.udacity.com/course/android-basics-user-input--ud836
 3. Android Basics: Multiscreen Apps - https://www.udacity.com/course/android-basics-multiscreen-apps--ud839  
-4. Networking course -
+4. Networking course - https://www.udacity.com/course/android-basics-networking--ud843
 5. Data Storage course -
 6. Developing Android Apps course - 
 7. Advanced Android App Development - 
