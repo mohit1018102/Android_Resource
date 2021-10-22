@@ -16,5 +16,7 @@
 15. `adb shell rm /data/dalvik-cache/* ` **clear cache.**
 16. `adb reboot` **reboot connected device**
 17. `# cd /data/app` -> `find . -name libnativelib.so` **find native lib library.**
+18. **To check crashes :** adb shell monkey -p <package-name> -v 1000 > outputlog.txt
+19. **How to convert profiler's hprof to MAT understandable hprof** : `hprof-conv input.hprof output.hprof`
 
  
