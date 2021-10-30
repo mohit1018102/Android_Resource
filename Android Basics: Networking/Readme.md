@@ -30,3 +30,55 @@
     * tsunami: was there a tsunami alert issued? ->0:no / 1: yes 
     * title : (mag+place)
     * coordinates : where earthquake occurred (log, lat, depth)
+## Json Overview
+1. JSON stands for **JavaScript Object Notation.**
+2. JSON is a lightweight data-interchange format.
+3. JSON is plain text written in JavaScript object notation.
+4. JSON is used to send data between computers.
+5. JSON is **language independent**
+
+### JSON Syntax Rules
+* JSON syntax is derived from JavaScript object notation syntax:
+1. Data is in name/value pairs
+2. Data is separated by commas
+3. Curly braces hold objects
+4. Square brackets hold arrays
+
+### JSON object
+* JSON objects are written inside curly braces.
+```json
+   {
+       "firstName":"John", 
+       "lastName":"Doe"
+    }
+```
+
+### JSON Arrays
+* JSON arrays are written inside square brackets.
+``` json
+   {
+     "company":"xyz",                                             //json primitive
+     "employees":[                                                // json array
+                     {"firstName":"John", "lastName":"Doe"},
+                     {"firstName":"Anna", "lastName":"Smith"},    // json object
+                     {"firstName":"Peter", "lastName":"Jones"}
+                  ]
+   }
+```
+### Nested JSON OBJECT
+```json
+    {
+        "name": "xyz",                                             //json primitive
+        "other": {                                                 // json object
+                     "details": [
+                                   {"data":"a","data":"b"},        
+                                   {"data":"a","data":"b"},        
+                                   {"data":"a","data":"b"},
+                                   {"data":"a","data":"b"}         
+                                  ],
+                      "xyz": "abc"                                   //json primitive
+                  }
+      }
+```
+
+### json formatter : https://jsonformatter.curiousconcept.com/
