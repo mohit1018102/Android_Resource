@@ -138,7 +138,7 @@
     <corners android:radius="18dp" />
 </shape>
 ```
-
+* **To set magnitude circle backgroung programatically.**
 
 ```java
  private int getMagnitudeColor(float mag)
