@@ -110,6 +110,22 @@
       int count= firstCandy.getInt("count");
 ```
 
+## Conversion of Unix time to local time
+
+```java
+         Long timeInMilliseconds = 1454124312220L;
+         Date dateObject = new Date(timeInMilliseconds);
+         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyyy.MMMM.dd hh:mm aaa");
+         String dateToDisplay = dateFormatter.format(dateObject);
+```
+
+## Formatting Decimals
+
+```java
+   DecimalFormat formatter = new DecimalFormat("0.00");
+   String output = formatter.format(2.3234);
+```
+
 
 
 
