@@ -82,3 +82,34 @@
 ```
 
 ### json formatter : https://jsonformatter.curiousconcept.com/
+
+## Parsing JSON in Android
+1. Converting data into useful format is called parsing.
+```json
+
+{
+        "candies":[
+                      {
+                        "name":"JellyBean",
+                        "count":10
+                       }
+                   ]
+ }
+```
+
+**optJSONArray(String name)**
+**Returns the value mapped by name if it exists and is a JSONArray, or null otherwise.**
+```java
+      String candyJson="{ \" candies \" : [ { \"name\":\"jellybeans\", \"count\" : 10 }] }";
+
+      JSONObject root=new JSONObject(candyJSON);
+      JSONArray candyArray=root.getJSONArray("candies");      //optJSONArray can be used here incase of unsurety about key name.
+      JSONObject firstCandy=candyArray.getJSONObject(0);
+
+      String name= firstCandy.getString("name");
+      int count= firstCandy.getInt("count");
+```
+
+
+
+
