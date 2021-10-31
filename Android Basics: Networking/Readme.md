@@ -140,4 +140,41 @@
 ```
 
 
+```java
+ private int getMagnitudeColor(float mag)
+    {
+        int m=(int)mag;
+        switch (m)
+        {
+
+            case 1: return ContextCompat.getColor(getContext(), R.color.magnitude1);
+
+            case 2: return ContextCompat.getColor(getContext(), R.color.magnitude2);
+
+            case 3: return ContextCompat.getColor(getContext(), R.color.magnitude3);
+
+            case 4: return ContextCompat.getColor(getContext(), R.color.magnitude4);
+
+            case 5: return ContextCompat.getColor(getContext(), R.color.magnitude5);
+
+            case 6:return ContextCompat.getColor(getContext(), R.color.magnitude6);
+
+            case 7:return ContextCompat.getColor(getContext(), R.color.magnitude7);
+            case 8: return ContextCompat.getColor(getContext(), R.color.magnitude8);
+
+            case 9:return ContextCompat.getColor(getContext(), R.color.magnitude9);
+
+            case 10:return ContextCompat.getColor(getContext(), R.color.magnitude10plus);
+
+            default: return ContextCompat.getColor(getContext(), R.color.magnitude1);
+        }
+    }
+
+        GradientDrawable magnitudeCircle = (GradientDrawable) mag.getBackground();
+        int magnitudeColor = getMagnitudeColor(earthquake.getMagnitude());
+        magnitudeCircle.setColor(magnitudeColor);
+```
+
+
+
 
