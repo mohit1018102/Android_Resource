@@ -126,6 +126,18 @@
    String output = formatter.format(2.3234);
 ```
 
+## Magnitude Circle
+1. goto drawable> right click> new> drawable resource
+```xml
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/magnitude1" />
+    <size
+        android:width="36dp"
+        android:height="36dp" />
+    <corners android:radius="18dp" />
+</shape>
+```
 
 
 
