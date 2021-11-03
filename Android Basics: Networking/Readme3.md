@@ -86,7 +86,7 @@ new Thread(new Runnable() {
 
 ```java
 
-           Handler handler=new Handler(){
+           Handler handler=new Handler(Looper.getMainLooper()){
             @Override
             public void handleMessage(@NonNull Message msg) {
                 super.handleMessage(msg);
