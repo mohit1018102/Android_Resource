@@ -86,9 +86,9 @@ new Thread(new Runnable() {
 
 ```java
 
-           Handler handler=new Handler(Looper.getMainLooper()){
+           Handler handler=new Handler(Looper.getMainLooper()){               // handler associate to main thread looper
             @Override
-            public void handleMessage(@NonNull Message msg) {
+            public void handleMessage(@NonNull Message msg) {                // handles the message
                 super.handleMessage(msg);
 
                 String response = msg.getData().getString("result");
@@ -97,9 +97,9 @@ new Thread(new Runnable() {
             }
         };
 
-        Thread thread=new Thread(){
+        Thread thread=new Thread(){                              // worker thread or background thread                         
             @Override
-            public void run() {
+            public void run() {                                 // can't update ui from here 
                 super.run();
 
                 URL url=QueryUtils.createUrl(USGS_REQUEST);
@@ -116,15 +116,15 @@ new Thread(new Runnable() {
                     response="";
                 }
 
-                Message msg = new Message();
+                Message msg = new Message();                      // Message creation
                 Bundle data = new Bundle();
                 data.putString("result",response);
                 msg.setData(data);
-                handler.sendMessage(msg);
+                handler.sendMessage(msg);                         // push msg to main thread message queue.
 
             }
         };
-        thread.start();
+        thread.start();                                           //starts thread
 ```
 
 
