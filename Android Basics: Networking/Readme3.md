@@ -129,10 +129,17 @@ new Thread(new Runnable() {
 
 
 
+# Loader to load data
 
-
-
-
-
-
-
+* Loaders solve these problems and includes other benefits. For example:
+1. Loaders run on separate threads to prevent janky or unresponsive UI.
+2. Loaders simplify thread management by providing callback methods when events occur.
+3. Loaders persist and cache results across configuration changes to prevent duplicate queries.
+4. **The best part about Loaders is that Loaders survive configuration changes. That expensive data you just retrieved? Still there for immediate retrieval when the activity comes back up.**
+5. **But even better: Loaders don’t stay around forever. They’ll be automatically cleaned up when the requesting Activity or Fragment is permanently destroyed.**
+<p align="center">
+       <img src="./img/loader.PNG" />
+       </p>
+       
+       
+ 
