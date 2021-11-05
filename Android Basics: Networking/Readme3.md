@@ -142,4 +142,69 @@ new Thread(new Runnable() {
        </p>
        
        
+## Loading Indicator
+
+```xml
+
+ <!-- Loading indicator is only shown before the first load -->
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+```
+
+```java
+        View loadingIndicator = findViewById(R.id.loading_indicator);
+        
+        loadingIndicator.setVisibility(View.VISIBLE);                          //loading visible
+        
+         Handler handler = new Handler(Looper.getMainLooper()) {               // handler associate to main thread looper
+                @Override
+                public void handleMessage(@NonNull Message msg) {                // handles the message
+                    super.handleMessage(msg);
+
+                    String response = msg.getData().getString("result");
+                    ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes(response);
+                    if (earthquakes.size() == 0)
+                        mEmptyStateTextView.setText(R.string.no_record);
+                    uiUpdate(earthquakes);
+                    loadingIndicator.setVisibility(View.GONE);                      <--------- // loading GONE
+                }
+            };
+```
+
+
+##   No network Connection
+
+
+```xml
+       AndroidManifest.xml
+       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+```java
+
+      // Get a reference to the ConnectivityManager to check state of network connectivity
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        // Get details on the currently active default data network
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        // If there is a network connection, fetch data
+        if (networkInfo != null && networkInfo.isConnected()) {
+           
+           /* starts thread.......*/
+           
+           
+        }
+        else{
+            mEmptyStateTextView.setText(R.string.no_internet_connection);
+        }
+        
+```
+       
+       
  
