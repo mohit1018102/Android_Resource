@@ -64,3 +64,34 @@ sql> .tables //to check tables
    DROP TABLE COMPANY;
 ```
 
+## CRUD( CREATE READ UPDATE DELETE)
+1. CREATE : INSERT
+2. READ : SELECT
+3. UPDATE: UPDATE 
+4. DELETE: DELETE
+
+```sql
+CREATE TABLE pets (_id INTEGER, 
+                    name TEXT, 
+                    breed TEXT, 
+                    gender INTEGER, 
+                    weight INTEGER
+                    );
+```
+
+### INSERT(CREATE)
+```sql
+INSERT INTO pets(_id, name, breed, gender, weight) VALUES(2, "Garfield", "Tabby", 1, 8);
+```
+### Read
+```sql
+select * from pets;
+```
+
+### TABLE CONSTRAINT
+1. PRIMARY KEY
+2. AUTO INCREMENT
+3. NOT NULL
+4. DEFAULT<Value>
+
+
