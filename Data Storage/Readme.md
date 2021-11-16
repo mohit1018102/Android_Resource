@@ -1,4 +1,5 @@
 # DATA STORAGE
+## cheat sheet : https://github.com/mohit1018102/Android_Resource/blob/main/Data%20Storage/sql-sqlite-commands-cheat-sheet.pdf
 ## Sqlite
 **Lite weighted sql database preinstalled in mobile devices**
 1. SQL: Structured query language
