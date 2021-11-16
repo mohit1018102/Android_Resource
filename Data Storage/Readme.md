@@ -86,12 +86,39 @@ INSERT INTO pets(_id, name, breed, gender, weight) VALUES(2, "Garfield", "Tabby"
 ### Read
 ```sql
 select * from pets;
+
+select * from pets where _id==1;
+
+select name,weight from pets 
+where gender==1 
+ORDER BY weight DESC;
 ```
 
 ### TABLE CONSTRAINT
 1. PRIMARY KEY
 2. AUTO INCREMENT
 3. NOT NULL
-4. DEFAULT<Value>
+4. DEFAULT<Value>  
+```sql
+    CREATE TABLE pets (
+        _id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        breed TEXT,
+        gender INTEGER NOT NULL,
+        weight INTEGER NOT NULL DEFAULT 0
+    );
+```
+
+### UPDATE 
+```sql
+    UPDATE pets SET weight=20
+    where _id==2;
+```
+    
+### DELETE
+```sql
+    DELETE FROM pets 
+    where _id==2;
+```
 
 
