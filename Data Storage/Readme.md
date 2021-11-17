@@ -88,10 +88,10 @@ INSERT INTO pets(_id, name, breed, gender, weight) VALUES(2, "Garfield", "Tabby"
 ```sql
 select * from pets;
 
-select * from pets where _id==1;
+select * from pets where _id=1;
 
 select name,weight from pets 
-where gender==1 
+where gender=1 
 ORDER BY weight DESC;
 ```
 
@@ -113,13 +113,13 @@ ORDER BY weight DESC;
 ### UPDATE 
 ```sql
     UPDATE pets SET weight=20
-    where _id==2;
+    where _id=2;
 ```
     
 ### DELETE
 ```sql
     DELETE FROM pets 
-    where _id==2;
+    where _id=2;
 ```
 
 
