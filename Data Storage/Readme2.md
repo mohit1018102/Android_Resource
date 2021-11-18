@@ -220,6 +220,34 @@ public class PetDbHelper extends SQLiteOpenHelper {
 
 ### Database stored inside------>    /data/com.technomaniacs.android.mypet/databases/mypets.db    : you can see it on your rooted device
 
+## Inserting value using content values
+
+<p align="center">
+        <img src="img/contentvalue.PNG" />
+ </p>
+ 
+ 
+ ```java
+ 
+ private void  insertData()
+    {    PetDbHelper dbHelper=new PetDbHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+       // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(PetEntry.COLUMN_PET_NAME,"dummy dog");
+        values.put(PetEntry.COLUMN_PET_BREED,"dummy");
+        values.put(PetEntry.COLUMN_PET_GENDER,0);
+        values.put(PetEntry.COLUMN_PET_WEIGHT,32);
+
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(PetEntry.TABLE_NAME, null, values);//returns id otherwise -1
+    }
+```
+
+
         
 
 
