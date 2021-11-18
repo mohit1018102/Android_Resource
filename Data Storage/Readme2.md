@@ -58,5 +58,73 @@
 
 ```
 
+# steps to create DB
+
+## 1. SCHEMA AND CONTRACT CLASS
+
+```sql
+SCHEMA
+
+CREATE TABLE pets
+( _id INTEGER AUTOINCREMENT PRIMARYKEY,
+  name TEXT,
+  breed TEXT,
+  gender INTEGER,
+  weight REAL
+);
+  
+```
+
+#### Contract class
+1. A contract class is a container for constants that define names for URIs, tables, and columns. 
+2. The contract class allows you to use the same constants across all the other classes in the same package.
+3. This lets you change a column name in one place and have it propagate throughout your code.
+
+```java
+/** Note: By implementing the BaseColumns interface, your inner class can inherit a primary key field 
+called _ID that some Android classes such as CursorAdapterexpect it to have. It's not required, 
+but this can help your database work harmoniously with the Android framework.
+**/
+public final class PetContract {
+
+    private PetContract()
+    {
+    }
+
+    public static class PetEntry implements BaseColumns
+    {
+        //********table*************
+        public static final String TABLE_NAME="pets";
+        public static final String _ID=BaseColumns._ID;
+        public static final String COLUMN_PET_NAME="name";
+        public static final String COLUMN_PET_BREED="breed";
+        public static final String COLUMN_PET_GENDER="gender";
+        public static final String COLUMN_PET_WEIGHT="weight";
+
+        //*********gender**********
+        public static final int GENDER_UNKNOWN=0;
+        public static final int GENDER_MALE=1;
+        public static final int GENDER_FEMALE=2;
+
+    }
+}
+```
+
+## 2. create Database using SQLiteOpenHelper
+1. Android provides a class that help us create, open and manage db and that class is SQLiteOpenHelper class.
+2. what does this class do:
+        * create a sqlite database when it is first accessed.
+        * next times when user opens the app, Gives you a connection to that database.
+        * Manages updating the database schema if version changes
+3. Todo:
+      * create a class that extends SQLiteOpenHelper.
+      * create constants for database name and database version
+      * create a constructor
+      * implement onCreate()- this method is for when the database create for first time.
+      * implement onUpgrade()- this method is for when the db schema of the db changes.(ex: adding new column).
+        
+
+
+
 
 
