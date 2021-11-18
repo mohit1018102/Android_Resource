@@ -87,6 +87,18 @@ but this can help your database work harmoniously with the Android framework.
 **/
 public final class PetContract {
 
+
+public static final String SQL_CREATE_ENTRIES ="CREATE TABLE "+ PetEntry.TABLE_NAME+
+            "("+ PetEntry._ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+              +PetEntry.COLUMN_PET_NAME +" TEXT NOT NULL,"
+              +PetEntry.COLUMN_PET_BREED+ " TEXT,"
+              +PetEntry.COLUMN_PET_GENDER+ " INTEGER NOT NULL,"
+              +PetEntry.COLUMN_PET_WEIGHT+ " INTEGER NOT NULL DEFAULT 0"
+            +")";
+
+    public static final String SQL_DELETE_ENTRIES =
+            "DROP TABLE IF EXISTS " + PetEntry.TABLE_NAME;
+
     private PetContract()
     {
     }
@@ -122,6 +134,92 @@ public final class PetContract {
       * create a constructor
       * implement onCreate()- this method is for when the database create for first time.
       * implement onUpgrade()- this method is for when the db schema of the db changes.(ex: adding new column).
+ 
+ ## open app for first time: creates db 
+ <p align="center">
+        <img src="img/helper.PNG" />
+  </p>
+  
+ ## second time
+ <p align="center">
+        <img src="img/helper2.PNG" />
+  </p>
+  
+  #### On the device, go to Settings > Apps > Find the app in question > Clear Cache. This erases any pre-existing sqlite database for the app.
+  
+   ## use SQLiteDatabase obj to communicate with database
+ <p align="center">
+        <img src="img/helper3.PNG" />
+  </p>
+  
+
+
+```java
+
+public class PetDbHelper extends SQLiteOpenHelper {
+
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "mypets.db";
+
+    public PetDbHelper(Context context)
+    {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+        db.execSQL(PetContract.SQL_CREATE_ENTRIES);
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // This database is only a cache for online data, so its upgrade policy is
+        // to simply to discard the data and start over
+        db.execSQL(PetContract.SQL_DELETE_ENTRIES);
+        onCreate(db);
+
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db, oldVersion, newVersion);
+    }
+}
+
+```
+
+```java
+// to check the db 
+
+ private void displayDatabaseInfo()
+    {
+        PetDbHelper dbHelper=new PetDbHelper(this);
+        SQLiteDatabase db=dbHelper.getReadableDatabase();
+        Cursor cursor=null;
+
+        try{
+            cursor=db.rawQuery("SELECT * FROM "+ PetEntry.TABLE_NAME,null);
+
+            Toast.makeText(this,cursor.getColumnCount()+" "+cursor.getCount(),Toast.LENGTH_LONG).show();
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(this,"failed!!!",Toast.LENGTH_LONG).show();
+
+        }
+        finally {
+            cursor.close();
+            db.close();
+        }
+
+    }
+```
+
+
+### Database stored inside------>    /data/com.technomaniacs.android.mypet/databases/mypets.db    : you can see it on your rooted device
+
         
 
 
