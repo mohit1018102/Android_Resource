@@ -17,8 +17,8 @@
 16. `adb reboot` **reboot connected device**
 17. `# cd /data/app` -> `find . -name libnativelib.so` **find native lib library.**
 18. **To check crashes :** adb shell monkey -p <package-name> -v 1000 > outputlog.txt
-19. adb shell am dumpheap <pid> /data/local/tmp/android_1.hprof    **to take heap dump**
-20. adb pull /data/local/tmp/android_1.hprof  **to pull heap dump**
+19. `adb shell am dumpheap <pid> /data/local/tmp/android_1.hprof`    **to take heap dump**
+20. `adb pull /data/local/tmp/android_1.hprof`  **to pull heap dump**
 21. **How to convert profiler's hprof to MAT understandable hprof** : `hprof-conv input.hprof output.hprof`
 
  
