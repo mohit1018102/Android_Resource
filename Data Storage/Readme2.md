@@ -247,6 +247,86 @@ public class PetDbHelper extends SQLiteOpenHelper {
     }
 ```
 
+## Query
+
+```java
+SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+// Define a projection that specifies which columns from the database
+// you will actually use after this query.
+String[] projection = {
+    BaseColumns._ID,
+    FeedEntry.COLUMN_NAME_TITLE,
+    FeedEntry.COLUMN_NAME_SUBTITLE
+    };
+
+// Filter results WHERE "title" = 'My Title'
+String selection = FeedEntry.COLUMN_NAME_TITLE + " = ?";
+String[] selectionArgs = { "My Title" };
+
+// How you want the results sorted in the resulting Cursor
+String sortOrder =
+    FeedEntry.COLUMN_NAME_SUBTITLE + " DESC";
+
+Cursor cursor = db.query(
+    FeedEntry.TABLE_NAME,   // The table to query
+    projection,             // The array of columns to return (pass null to get all)
+    selection,              // The columns for the WHERE clause
+    selectionArgs,          // The values for the WHERE clause
+    null,                   // don't group the rows
+    null,                   // don't filter by row groups
+    sortOrder               // The sort order
+    );
+```
+
+### Cursor is the Interface which represents a 2 dimensional table of any database. When you try to retrieve some data using SELECT statement, then the database will first create a CURSOR object and return its reference to you.
+
+### The pointer of this returned reference is pointing to the -1th location which is otherwise called as before first location of the Cursor, so when you want to retrive data from the cursor, you have to first move to the first record so we have to use moveToFirst
+
+```java
+private void displayDatabaseInfo()
+    {
+        PetDbHelper dbHelper=new PetDbHelper(this);
+        SQLiteDatabase db=dbHelper.getReadableDatabase();
+        Cursor cursor=null;
+        String[] projection = {
+                PetEntry._ID,
+                PetEntry.COLUMN_PET_NAME,
+                PetEntry.COLUMN_PET_BREED,
+                PetEntry.COLUMN_PET_GENDER
+        };
+
+
+    try{
+        cursor = db.query(
+                PetEntry.TABLE_NAME,   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                null,              // The columns for the WHERE clause
+                null,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                null               // The sort order
+        );
+
+           int nameid=cursor.getColumnIndex(PetEntry.COLUMN_PET_NAME);
+
+          cursor.moveToLast();
+
+            Toast.makeText(this,cursor.getString(nameid)+" "+cursor.getCount(),Toast.LENGTH_LONG).show();
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(this,"failed!!!",Toast.LENGTH_LONG).show();
+
+        }
+        finally {
+            cursor.close();
+            db.close();
+        }
+
+    }
+```
+
 
         
 
