@@ -9,7 +9,7 @@
  
  ## content provider is an android component that is used to share data.
   <p align="center">
-        <img src="img/cp3.PNG" />
+        <img src="img/cp4.PNG" />
   </p>
   
  ## works wells with other android framework.
