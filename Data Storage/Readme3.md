@@ -280,5 +280,25 @@ public final class PetContract {
     Toast.makeText(getApplicationContext(),"All data deleted : row count "+row,Toast.LENGTH_SHORT).show();
 ```
 
+## getType()
+
+### This ContentProvider's getType() method is used mostly when you allow your ContentProvider to interact with other third party applications. This MIME Type is used by Android System to find which applications can handle it.
+```java
+
+public static final String CONTENT_TYPE = "vnd.android.cursor.dir/contact";
+ @Override
+      public String getType(Uri uri) {
+          final int match = sUriMatcher.match(uri);
+          switch (match) {
+              case PETS:
+                  return PetEntry.CONTENT_LIST_TYPE;
+              case PET_ID:
+                  return PetEntry.CONTENT_ITEM_TYPE;
+              default:
+                  throw new IllegalStateException("Unknown URI " + uri + " with match " + match);
+          }
+      }
+```
+
 
  
