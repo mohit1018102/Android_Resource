@@ -85,4 +85,50 @@ public class PetProvider extends ContentProvider {
                <img src="img/uri3.PNG" />
                
 </p>
+
+```java
+
+public final class PetContract {
+
+   .......
+    public static final String CONTENT_AUTHORITY = "com.technomaniacs.android.mypet";
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+    public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PetEntry.TABLE_NAME);
+    .....
+}
+
+```
+
+# URI Matcher
+
+## content://com.technomaniacs.android.mypet/# --> number of any length
+## content://com.technomaniacs.android.mypet/* --> string of any length
+
+<p align="center">
+        <img src="img/urim1.PNG" />
+        <img src="img/urim2.PNG" />
+        <img src="img/urim3.PNG" />
+</p>
+
+```java
+
+    /** URI matcher code for the content URI for the pets table */
+    private static final int PETS = 100;
+
+    /** URI matcher code for the content URI for a single pet in the pets table */
+    private static final int PET_ID = 101;
+
+    /**
+     * UriMatcher object to match a content URI to a corresponding code.
+     * The input passed into the constructor represents the code to return for the root URI.
+     * It's common to use NO_MATCH as the input for this case.
+     */
+    private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+    static {
+        sUriMatcher.addURI(PetContract.CONTENT_AUTHORITY, PetEntry.TABLE_NAME, PETS);
+        sUriMatcher.addURI(PetContract.CONTENT_AUTHORITY, PetEntry.TABLE_NAME +"/#", PET_ID);
+    }
+```
+
+
  
