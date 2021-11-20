@@ -186,6 +186,99 @@ public final class PetContract {
     Uri uri = getContentResolver().insert(PetContract.CONTENT_URI_ALL,values);//returns id otherwise -1
     return (uri==null)?-1: ContentUris.parseId(uri);
  ```
+ 
+ ## Data validation
+ 
+ ```java
+  private boolean sanityCheck(ContentValues values)
+    {
+        String name = values.getAsString(PetEntry.COLUMN_PET_NAME);
+        int gender = values.getAsInteger(PetEntry.COLUMN_PET_GENDER);
+        int weight = values.getAsInteger(PetEntry.COLUMN_PET_WEIGHT);
+        String result="";
+        if(name.equals(""))
+        {
+            result+="name";
+        }
+
+        if(gender!=PetEntry.GENDER_FEMALE && gender!=PetEntry.GENDER_MALE &&  gender!=PetEntry.GENDER_UNKNOWN )
+        {
+            result+=", gender, ";
+        }
+
+        if(weight==-1)
+        {
+            result+=", weight";
+        }
+
+        if(result.length()!=0)
+        {
+            Toast.makeText(getContext().getApplicationContext(),"Invalid : "+result,Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+
+    }
+ ```
+ 
+ ## update
+ 
+ ```java
+ private int updateData(ContentValues values, String selection, String[] selectionArgs) {
+        SQLiteDatabase db = mPetDbHelper.getWritableDatabase();
+
+        return db.update(PetEntry.TABLE_NAME,values,selection,selectionArgs);
+
+    }
+
+    @Override
+    public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
+        if (sanityCheck(values)==false) return -1;
+        int rowAffected=0;
+        int id= sUriMatcher.match(uri);
+        switch (id)
+        {
+            case PET_ID:
+                selection=PetEntry._ID+"=?";
+                selectionArgs=new String[] {String.valueOf(ContentUris.parseId(uri))};
+                rowAffected=updateData(values,selection,selectionArgs);
+                break;
+            default: return -1;
+        }
+        return rowAffected;
+    }
+    
+    
+     Uri made=Uri.withAppendedPath(PetContract.CONTENT_URI_ALL, String.valueOf(1));
+     int x=getContentResolver().update(made,values,null,null);
+ ```
+ 
+ ## delete
+ 
+ ```java
+  @Override
+    public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
+        SQLiteDatabase db=mPetDbHelper.getWritableDatabase();
+        int rowDeleted=0;
+        int id=sUriMatcher.match(uri);
+        switch (id)
+        {
+            case PETS:
+                break;
+            case PET_ID:
+                selection=PetEntry._ID+"=?";
+                selectionArgs=new String[] {String.valueOf(ContentUris.parseId(uri))};
+                break;
+            default:
+        }
+        rowDeleted=db.delete(PetEntry.TABLE_NAME,selection,selectionArgs);
+        return rowDeleted;
+    }
+    
+    
+    int row=getContentResolver().delete(PetContract.CONTENT_URI_ALL,null,null);
+    Toast.makeText(getApplicationContext(),"All data deleted : row count "+row,Toast.LENGTH_SHORT).show();
+```
 
 
  
