@@ -130,5 +130,62 @@ public final class PetContract {
     }
 ```
 
+## CP Query
+
+```java
+ public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+        SQLiteDatabase db=mPetDbHelper.getReadableDatabase();
+        Cursor cursor=null;
+        int id=sUriMatcher.match(uri);
+        switch (id)
+        {
+            case PETS:
+                break;
+            case PET_ID:
+                selection=PetEntry._ID+"=?";
+                selectionArgs=new String[] {String.valueOf(ContentUris.parseId(uri))};
+                break;
+            default:
+        }
+
+        cursor= db.query(PetEntry.TABLE_NAME,projection,selection,selectionArgs,null,null,sortOrder);
+        return cursor;
+    }
+    
+   
+    cursor=getContentResolver().query(PetContract.CONTENT_URI_ALL,projection,null,null,null);
+ ```
+ 
+ ## CP INSERT
+ ```java
+  private Uri insertPet(Uri uri,ContentValues contentValues)
+    {
+        SQLiteDatabase db = mPetDbHelper.getWritableDatabase();
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(PetEntry.TABLE_NAME, null, contentValues);//returns id otherwise -1
+
+        return (newRowId<0)?null:Uri.withAppendedPath(uri, String.valueOf(newRowId));
+    }
+
+    @Nullable
+    @Override
+    public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
+
+        final int match = sUriMatcher.match(uri);
+        switch (match) {
+            case PETS:
+                return insertPet(uri,values);
+            default:
+                throw new IllegalArgumentException("Insertion is not supported for " + uri);
+        }
+
+    }
+    
+    
+    Uri uri = getContentResolver().insert(PetContract.CONTENT_URI_ALL,values);//returns id otherwise -1
+    return (uri==null)?-1: ContentUris.parseId(uri);
+ ```
+
 
  
