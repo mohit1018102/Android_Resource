@@ -35,7 +35,8 @@
        * To generate dump.txt : ```adb shell am dumpheap -n <process_id> /data/local/tmp/Dump.txt```
        * To pull dump file : ```adb pull /data/local/tmp/Dump.txt```
   4. ### Dump.txt
-     ```Android Native Heap Dump v1.2
+     ```
+     Android Native Heap Dump v1.2
        Build fingerprint : ...
        Total memory: 31736900
        Allocation records: 14530
@@ -46,7 +47,8 @@
        z0
        ............. mem addr for sus leak
        
-       6d9145b000-6d9145c000 r--p 00000000 fd:00 4684   /system/lib64/......./lib.so <---- .so file memory range```
+       6d9145b000-6d9145c000 r--p 00000000 fd:00 4684   /system/lib64/......./lib.so <---- .so file memory range
+       ```
      
      * search memory addr in the given range.
     
